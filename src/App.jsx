@@ -1,13 +1,11 @@
-import React from 'react';
-import logo from '../src/assets/Allahverdilogo.png'; // Uzantıyı ve dosya yolunu kontrol edin
+import React from 'react'
 
 const App = () => {
   return (
     <div>
-      <h1>Yaxsi Oglan Allahverdi</h1>
-      <img src={logo} alt="Allahverdi Logo" />
+      <a href="https://1drv.ms/b/s!Aj7YPMiiYJGLcRh3LVacmcgB5dA?e=J9cHvx"> salam</a>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
