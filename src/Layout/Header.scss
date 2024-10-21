@@ -1,0 +1,24 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    // padding: 20px;
+    width: 100%;
+    background: rgba(0, 31, 63, 0.8); /* Header fonu */
+  }
+  
+  .title {
+    font-size: 24px;
+    color: #FFD700; /* Sarı başlıq */
+  }
+  
+  .nav a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .nav a:hover {
+    color: #FFB347; /* Sarımsı hover effekti */
+  }
+  
