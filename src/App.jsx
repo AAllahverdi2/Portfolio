@@ -27,10 +27,10 @@ import Route from './router/routes';
 const router=createBrowserRouter(Route)
 const App = () => {
   return (
-    <div className='root'>
+    <>
       <RouterProvider router={router}/>
       
-    </div>
+    </>
   )
 }
 
