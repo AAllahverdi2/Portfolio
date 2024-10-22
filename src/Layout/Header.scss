@@ -1,165 +1,129 @@
 .header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
-    gap: 200px;
-    width: 100% !important ;
-    background:#101046 /* Header fonu */;
-    box-shadow: rgba(234, 232, 232, 0.35) 0px 5px 15px;  }
-  
-  .title {
-    font-size: 32px;
-    color: #fff; /* Sarı başlıq */
-  }
-  
-  .nav a {
-    margin: 0 10px;
-    color: #fff;
-    text-decoration: none;
-    font-size: 27px;
-    font-family: 'Roboto', sans-serif;
-  }
-  .title {
-    font-size: 32px;
-    color: #fff;
-  }
-  
-  .title:hover {
-    text-shadow: 2px 2px 4px #fff; /* Beyaz renkli gölge */
-  }
-  .nav a:hover {
-    color: red; /* Sarımsı hover effekti */
-  }
-  
-  @font-face {
-    font-family: 'MyCustomFont';
-    src: url('fonts/mycustomfont.woff2') format('woff2'),
-         url('fonts/mycustomfont.woff') format('woff');
-  }
-  
-  p {
-    font-family: 'MyCustomFont', sans-serif;
-  }
-  
-
-  @media only screen and (max-width: 900px) {
-   .header{
-    display: flex;
-    gap: 10px;
-   }
-  }
-  @media only screen and (max-width: 800px) {
-  .title{
-    font-size: 20px;
-  }
-  .nav a{
-    font-size: 18px;
-  }
-  }
-
-   @media only screen and (max-width: 600px) {
-   .nav{
-    display: none;
-   }
-   .offcanvasasa{
-    display: block !important;
-   }
-   
-    }
-
-    .offcanvasasa{
-      color: white !important;
-      display: none;
-    }
-
-    .offlinks{
-      display: flex;
-      flex-direction: column;
-    }
-    .offcanvas {
-      background-color: #101046 !important; /* Tünd fon rəngi */
-      max-height: 60vh; /* Hündürlüyü azaltmaq */
-      overflow-y: auto;
-      width: 100% !important;
-      color: #fff;
-
-  }
-  
-  
-  
-  .offcanvas-header {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .offlinks{
-    a{
-      color: #fff;
-      text-decoration: none;
-      
-      font-size: 23px;
-
-
-    }
-  }
-
-  .offbtn{
-    background-color: transparent !important;
-    font-size: 23px;
-  }
-  .offbtn {
-    position: relative;
-    width: 40px;
-    height: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    z-index: 1051;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  gap: 200px;
+  width: 100% !important;
+  background: #101046; 
+  box-shadow: rgba(234, 232, 232, 0.35) 0px 5px 15px; 
 }
 
-.bar {
-    width: 100%;
-    height: 4px;
-    background-color: #fff;
-    transition: 0.4s;
-    border-radius: 2px;
-}
-
-.offbtn.active .bar:nth-child(1) {
-    transform: translateY(13px) rotate(45deg);
-}
-
-.offbtn.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.offbtn.active .bar:nth-child(3) {
-    transform: translateY(-13px) rotate(-45deg);
-}
 .title {
   font-size: 36px;
   font-weight: bold;
-  background: linear-gradient(45deg, #e0f7fa, #b3e5fc, #81d4fa); /* Açıq mavi və ağ rənglər */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; /* Text şəffaf rəng */
-  animation: glowingText 2s infinite alternate; /* Parlayan mətn animasiyası */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.5); /* Xarici kölgə */
+  color: #fff; 
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
   padding: 5px 10px;
   border-radius: 5px;
 }
 
-// @keyframes glowingText {
-//   from {
-//       text-shadow: 0 0 10px #b3e5fc, 0 0 20px #81d4fa, 0 0 30px #e0f7fa, 0 0 40px #e0f7fa;
-//   }
-//   to {
-//       text-shadow: 0 0 20px #81d4fa, 0 0 30px #e0f7fa, 0 0 40px #b3e5fc, 0 0 50px #b3e5fc;
-//   }
-// }
+.nav a {
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 27px;
+  font-family: 'Roboto', sans-serif;
+}
 
+.nav-link {
+  position: relative;
+  padding: 5px 10px;
+}
 
+.nav-link.active-link {
+  color: blue; /* Aktiv link qırmızı olacaq */
+  border-bottom: 2px solid blue; /* Alt xətt */
+}
+
+.nav a:hover {
+  color: blue; 
+}
+
+@media only screen and (max-width: 900px) {
+  .header {
+      display: flex;
+      gap: 10px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .title {
+      font-size: 20px;
+  }
+  .nav a {
+      font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .nav {
+      display: none;
+  }
+  .offcanvasasa {
+      display: block !important;
+  }
+}
+
+.offcanvasasa {
+  color: white !important;
+  display: none;
+}
+
+.offlinks {
+  display: flex;
+  flex-direction: column;
+}
+
+.offcanvas {
+  background-color: #101046 !important;
+  max-height: 60vh;
+  overflow-y: auto;
+  width: 100% !important;
+  color: #fff;
+}
+
+.offcanvas-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.offlinks a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 23px;
+}
+
+.offbtn {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 1051;
+}
+
+.bar {
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  transition: 0.4s;
+  border-radius: 2px;
+}
+
+.offbtn.active .bar:nth-child(1) {
+  transform: translateY(13px) rotate(45deg);
+}
+
+.offbtn.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.offbtn.active .bar:nth-child(3) {
+  transform: translateY(-13px) rotate(-45deg);
+}

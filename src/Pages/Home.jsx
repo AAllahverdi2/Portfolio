@@ -5,7 +5,6 @@ const Home = () => {
   return (
     <div className='home__all'>
       <HomeSection1/>
-      
     </div>
   )
 }

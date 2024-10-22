@@ -25,17 +25,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // height: 100vh; /* Tam ekran hündürlüyü */
+  height: auto !important; 
   padding: 40px;
-  background-color: #101046; /* Tünd fon */
-  animation: fadeIn 1.5s ease-in-out; /* Fade-in animasiyası */
+  background-color: #101046; 
+  animation: fadeIn 1.5s ease-in-out; 
+  
 }
 
 .all__sec1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 50px; /* Sol və sağ tərəf arasında daha çox boşluq */
+  gap: 50px; 
 }
 
 .leftside {
@@ -44,7 +45,7 @@
 
 .leftside__content {
   color: #fff;
-  animation: fadeIn 2s ease-in-out; /* Fade-in animasiyası */
+  animation: fadeIn 2s ease-in-out; 
 }
 
 .intro-title {
@@ -52,7 +53,7 @@
   font-weight: bold;
   margin-bottom: 10px;
   color: #fff;
-  animation: bounce 2s infinite; /* Adın üzərində bounce animasiyası */
+  animation: bounce 2s infinite; 
 }
 
 .intro-subtitle {
@@ -61,14 +62,14 @@
 }
 
 .highlight {
-  color: #00bfff; /* Vurğulamaq üçün göy rəng */
+  color: #00bfff; 
 }
 
 .description {
   font-size: 1.2rem;
   line-height: 1.5;
   margin-bottom: 20px;
-  animation: fadeIn 2s ease-in-out; /* Fade-in animasiyası */
+  animation: fadeIn 2s ease-in-out; 
 }
 
 .buttons {
@@ -90,54 +91,55 @@
 
 .resume-btn:hover {
   background-color: #009acd;
-  transform: scale(1.05); /* Hover zamanı böyümə effekti */
-}.right__side {
+  transform: scale(1.05); 
+}
+
+.right__side {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 350px; /* Şəklin ölçüsü */
-  height: 350px; /* Şəklin hündürlüyü */
+  width: 350px; 
+  height: 350px; 
   border-radius: 50%;
-  overflow: hidden; /* Şəklin sərhədlərdən çıxmaması üçün */
-  position: relative; /* Kölgə effektləri üçün */
-  background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradient fon */
-  padding: 5px; /* Şəkilin ətrafında gradient border */
+  overflow: hidden; 
+  position: relative; 
+  background: linear-gradient(135deg, #1e3c72, #2a5298); 
+  padding: 5px; 
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.4), 
               0 0 50px rgba(0, 0, 0, 0.2), 
-              inset 0 0 10px rgba(255, 255, 255, 0.1); /* Bir neçə kölgə effekti */
+              inset 0 0 10px rgba(255, 255, 255, 0.1); 
 }
 
 .profile-photo {
   width: 100%;
   height: 100%;
-  border-radius: 50%; /* Dairəvi şəkil */
-  object-fit: cover; /* Şəklin konteynerə uyğunlaşması */
-  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5); /* İçəridən ağ kölgə */
+  border-radius: 50%; 
+  object-fit: cover; 
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5); 
 }
-
-
 
 @media only screen and (max-width: 1000px) {
-.all__sec1{
-  display: flex;
-  flex-direction: column-reverse;
-  // margin-top: 300px;
-}
-}
-@media only screen and (max-width: 700px) {
-.all__sec1{
- min-height: 1200px !important;
-}
+  .all__sec1 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 
-.socialmedias{
+@media only screen and (max-width: 700px) {
+  .all__sec1 {
+    min-height: 1200px !important;
+  }
+}
+
+.socialmedias {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
   padding: 20px;
 }
-.smedia{
+
+.smedia {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -146,7 +148,8 @@
   justify-content: center;
   border: 1px solid blue;
   align-items: center;
-  i{
-    font-size: 20px;
-  }
+}
+
+.smedia i {
+  font-size: 20px;
 }

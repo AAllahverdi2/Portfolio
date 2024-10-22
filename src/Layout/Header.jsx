@@ -32,13 +32,31 @@ const Header = () => {
         closeOffcanvas(); // Offcanvas-ı tam bağlayır
     }, [location.pathname]);
 
+    // Hər bir linkin aktiv olub-olmamasını yoxlamaq üçün funksiya
+    const isActiveLink = (path) => location.pathname === path;
+
     return (
         <div className="header">
-            <h1 className="title">Allahverdi </h1>
+            <h1 className="title">Allahverdi</h1>
             <nav className="nav">
-                <Link to="/">Home</Link>
-                <Link to="/about">About</Link>
-                <Link to="/contact">Contact</Link>
+                <Link 
+                    to="/" 
+                    className={`nav-link ${isActiveLink('/') ? 'active-link' : ''}`}
+                >
+                    Home
+                </Link>
+                <Link 
+                    to="/about" 
+                    className={`nav-link ${isActiveLink('/about') ? 'active-link' : ''}`}
+                >
+                    About
+                </Link>
+                <Link 
+                    to="/contact" 
+                    className={`nav-link ${isActiveLink('/contact') ? 'active-link' : ''}`}
+                >
+                    Contact
+                </Link>
             </nav>
             <div className="offcanvasasa">
                 <button 
