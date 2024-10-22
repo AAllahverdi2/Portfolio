@@ -1,28 +1,73 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+// Bootstrap JS-i import edirik
+import { Offcanvas } from 'bootstrap';
 import './Header.scss';
 
 const Header = () => {
+    const [isActive, setIsActive] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const handleLinkClick = (path) => {
+        closeOffcanvas();
+        navigate(path);
+    };
+
+    const toggleOffcanvas = () => {
+        setIsActive(!isActive);
+    };
+
+    const closeOffcanvas = () => {
+        const offcanvasElement = document.getElementById('offcanvasRight');
+        if (offcanvasElement) {
+            const bsOffcanvas = Offcanvas.getInstance(offcanvasElement) || new Offcanvas(offcanvasElement);
+            bsOffcanvas.hide(); // Offcanvas-ı bağlayır
+        }
+    };
+
+    // Səhifə dəyişdikdə offcanvas və backdrop-un silinməsi
+    useEffect(() => {
+        setIsActive(false);
+        closeOffcanvas(); // Offcanvas-ı tam bağlayır
+    }, [location.pathname]);
+
     return (
         <div className="header">
-            <h1 className="title">Allahverdi Agamaliyevh </h1>
+            <h1 className="title">Allahverdi </h1>
             <nav className="nav">
                 <Link to="/">Home</Link>
                 <Link to="/about">About</Link>
                 <Link to="/contact">Contact</Link>
             </nav>
             <div className="offcanvasasa">
-                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
+                <button 
+                    className={`btn btn-primary offbtn ${isActive ? 'active' : ''}`} 
+                    type="button" 
+                    data-bs-toggle="offcanvas" 
+                    data-bs-target="#offcanvasRight" 
+                    aria-controls="offcanvasRight"
+                    onClick={toggleOffcanvas}
+                >
+                    <div className="bar"></div>
+                    <div className="bar"></div>
+                    <div className="bar"></div>
+                </button>
 
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                    <div class="offcanvas-header">
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div className="offcanvas-header">
+                        <button 
+                            type="button" 
+                            className="btn-close text-reset" 
+                            data-bs-dismiss="offcanvas" 
+                            aria-label="Close"
+                            onClick={closeOffcanvas}
+                        ></button>
                     </div>
-                    <div class="offcanvas-body offlinks">
-                        <Link to="/">Home</Link><hr />
-                        <Link to="/about">About</Link> <hr />
-                        <Link to="/contact">Contact</Link> <head></head>
-
+                    <div className="offcanvas-body offlinks">
+                        <a href="#" onClick={() => handleLinkClick('/')}>Home</a><hr />
+                        <a href="#" onClick={() => handleLinkClick('/about')}>About</a><hr />
+                        <a href="#" onClick={() => handleLinkClick('/contact')}>Contact</a>
                     </div>
                 </div>
             </div>
