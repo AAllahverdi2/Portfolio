@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-// Bootstrap JS-i import edirik
 import { Offcanvas } from 'bootstrap';
 import './Header.scss';
 
@@ -22,17 +21,15 @@ const Header = () => {
         const offcanvasElement = document.getElementById('offcanvasRight');
         if (offcanvasElement) {
             const bsOffcanvas = Offcanvas.getInstance(offcanvasElement) || new Offcanvas(offcanvasElement);
-            bsOffcanvas.hide(); // Offcanvas-ı bağlayır
+            bsOffcanvas.hide();
         }
     };
 
-    // Səhifə dəyişdikdə offcanvas və backdrop-un silinməsi
     useEffect(() => {
         setIsActive(false);
-        closeOffcanvas(); // Offcanvas-ı tam bağlayır
+        closeOffcanvas(); 
     }, [location.pathname]);
 
-    // Hər bir linkin aktiv olub-olmamasını yoxlamaq üçün funksiya
     const isActiveLink = (path) => location.pathname === path;
 
     return (
@@ -74,13 +71,13 @@ const Header = () => {
 
                 <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                     <div className="offcanvas-header">
-                        <button 
+                        {/* <button 
                             type="button" 
                             className="btn-close text-reset" 
                             data-bs-dismiss="offcanvas" 
                             aria-label="Close"
                             onClick={closeOffcanvas}
-                        ></button>
+                        ></button> */}
                     </div>
                     <div className="offcanvas-body offlinks">
                         <a href="#" onClick={() => handleLinkClick('/')}>Home</a><hr />

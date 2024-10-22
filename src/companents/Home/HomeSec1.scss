@@ -130,7 +130,6 @@
     min-height: 1200px !important;
   }
 }
-
 .socialmedias {
   display: flex;
   justify-content: center;
@@ -146,10 +145,33 @@
   background-color: transparent;
   display: flex;
   justify-content: center;
-  border: 1px solid blue;
   align-items: center;
+  border: 1px solid blue;
+  transition: box-shadow 0.3s ease; /* Keçid effekti */
 }
 
-.smedia i {
+.smedia a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.smedia a i {
   font-size: 20px;
+  color: white !important;
+}
+
+.smedia:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 
+              0 0 20px rgba(255, 255, 255, 0.4), 
+              0 0 25px rgba(255, 255, 255, 0.3);
+}
+
+.resume-btn{
+  a{
+    text-decoration: none !important;
+    color: white;
+  }
 }
