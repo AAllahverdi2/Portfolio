@@ -1,0 +1,185 @@
+.education__all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+}
+
+.first__card,
+.second__card,
+.third__card {
+    border: 2px solid #9276d7;
+    width: 70%;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #242471;
+    display: flex;
+    gap: 10px;
+
+    img {
+        border-radius: 10px;
+    }
+}
+
+.eduright__side {
+    h3 {
+        color: white;
+    }
+}
+
+.factulty,
+.Location {
+    display: flex;
+    color: #fff;
+    gap: 5px;
+
+    h5 {
+        font-weight: bold;
+        color: rgb(136, 134, 134);
+        display: flex !important;
+    }
+
+    p {
+        font-size: 17px;
+        color: #fff;
+    }
+}
+
+.Profession {
+    display: flex;
+    color: #fff;
+    gap: 5px;
+
+    h5 {
+        color: rgb(136, 134, 134);
+        font-weight: bold;
+        display: flex !important;
+
+    }
+
+    p {
+        font-size: 17px;
+        color: #fff !important;
+    }
+}
+
+.Duration {
+    display: flex;
+    color: #fff;
+    gap: 5px;
+
+    p {
+        color: #fff !important;
+        font-weight: bold;
+    }
+
+    h5 {
+        color: rgb(136, 134, 134);
+        font-weight: bold;
+        display: flex !important;
+
+    }
+
+}
+
+.diploma{
+    h5{
+        font-weight: bold;
+        color: #fff;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+
+    .first__card,
+    .second__card,
+    .third__card {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 965px) {
+
+    .first__card,
+    .second__card,
+    .third__card {
+        width: 98%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+
+    .first__card,
+    .second__card,
+    .third__card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+
+        .eduleft__side {
+            width: 100%;
+
+            img {
+                width: 100%;
+                height: 50vh;
+                // image-rendering: -webkit-optimize-contrast;
+                // /* Chrome, Safari */
+                // image-rendering: crisp-edges;
+                // /* Firefox */
+                // image-rendering: pixelated;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 530px) {
+
+    .factulty,
+    .Location {
+        h5 {
+            display: none !important;
+        }
+
+        p {
+            // color: rgb(136, 134, 134);
+            font-weight: bold;
+        }
+    }
+
+    .Duration {
+        h5 {
+            display: none !important;
+        }
+
+        p {
+            color: rgb(136, 134, 134);
+            font-weight: bold;
+        }
+    }
+
+    .Profession {
+        h5 {
+            display: none !important;
+        }
+
+        p {
+            color: rgb(136, 134, 134);
+            font-weight: bold;
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 700px) {
+    .eduright__side {
+        h3 {
+            font-size: 18px;
+        }
+    }
+}

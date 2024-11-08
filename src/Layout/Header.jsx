@@ -49,10 +49,10 @@ const Header = () => {
                     Skills
                 </Link>
                 <Link
-                    to="/about"
+                    to="/education"
                     className={`nav-link ${isActiveLink('/about') ? 'active-link' : ''}`}
                 >
-                    About
+                    Education
                 </Link>
                 <Link
                     to="/contact"
@@ -84,7 +84,8 @@ const Header = () => {
                         <a href="#" onClick={() => handleLinkClick('/')}>Home</a><hr />
                         {/* <a href="#" onClick={() => handleLinkClick('/skills')}>About</a><hr /> */}
 
-                        <Link to='skills'>Skills</Link> <hr />
+                        <Link to='/skills'>Skills</Link> <hr />
+                        <Link to='/education'>Education</Link> <hr />
                         <a href="#" onClick={() => handleLinkClick('/contact')}>Contact</a>
                     </div>
                 </div>

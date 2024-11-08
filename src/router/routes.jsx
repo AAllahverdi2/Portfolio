@@ -14,7 +14,7 @@ const Route=[
                 element:<Home/>
             },
             {
-                path:"about",
+                path:"education",
                 element:<About/>
             },
             {
