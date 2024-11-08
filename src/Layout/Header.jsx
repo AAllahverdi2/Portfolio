@@ -27,7 +27,7 @@ const Header = () => {
 
     useEffect(() => {
         setIsActive(false);
-        closeOffcanvas(); 
+        closeOffcanvas();
     }, [location.pathname]);
 
     const isActiveLink = (path) => location.pathname === path;
@@ -36,31 +36,38 @@ const Header = () => {
         <div className="header">
             <h1 className="title">Allahverdi</h1>
             <nav className="nav">
-                <Link 
-                    to="/" 
+                <Link
+                    to="/"
                     className={`nav-link ${isActiveLink('/') ? 'active-link' : ''}`}
                 >
                     Home
                 </Link>
-                <Link 
-                    to="/about" 
+                <Link
+                    to="/skills"
+                    className={`nav-link ${isActiveLink('/skills') ? 'active-link' : ''}`}
+                >
+                    Skills
+                </Link>
+                <Link
+                    to="/about"
                     className={`nav-link ${isActiveLink('/about') ? 'active-link' : ''}`}
                 >
                     About
                 </Link>
-                <Link 
-                    to="/contact" 
+                <Link
+                    to="/contact"
                     className={`nav-link ${isActiveLink('/contact') ? 'active-link' : ''}`}
                 >
                     Contact
                 </Link>
+
             </nav>
             <div className="offcanvasasa">
-                <button 
-                    className={`btn btn-primary offbtn ${isActive ? 'active' : ''}`} 
-                    type="button" 
-                    data-bs-toggle="offcanvas" 
-                    data-bs-target="#offcanvasRight" 
+                <button
+                    className={`btn btn-primary offbtn ${isActive ? 'active' : ''}`}
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight"
                     aria-controls="offcanvasRight"
                     onClick={toggleOffcanvas}
                 >
@@ -71,17 +78,13 @@ const Header = () => {
 
                 <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                     <div className="offcanvas-header">
-                        {/* <button 
-                            type="button" 
-                            className="btn-close text-reset" 
-                            data-bs-dismiss="offcanvas" 
-                            aria-label="Close"
-                            onClick={closeOffcanvas}
-                        ></button> */}
+
                     </div>
                     <div className="offcanvas-body offlinks">
                         <a href="#" onClick={() => handleLinkClick('/')}>Home</a><hr />
-                        <a href="#" onClick={() => handleLinkClick('/about')}>About</a><hr />
+                        {/* <a href="#" onClick={() => handleLinkClick('/skills')}>About</a><hr /> */}
+
+                        <Link to='skills'>Skills</Link> <hr />
                         <a href="#" onClick={() => handleLinkClick('/contact')}>Contact</a>
                     </div>
                 </div>
