@@ -22,7 +22,7 @@ const HomeSection1 = () => {
                   download
                   style={{ fontSize: '18px', textDecoration: 'underline', color: 'blue' }}
                 >
-                  Yeni CV-ni Yüklə
+                  Download CV
                 </a>
               </button>
             </div>

@@ -14,9 +14,9 @@ const EducationSection = () => {
                         <h5>Profession : </h5> <p>Computer Science</p>
                     </div>
                     <div className="Duration">
-                       <h5>Duration :</h5> <p>(2021 September ~ Present)</p>
+                        <h5>Duration :</h5> <p>(2021 September ~ Present)</p>
                     </div>
-                    
+
                 </div>
             </div>
 
@@ -34,24 +34,24 @@ const EducationSection = () => {
                     <div className="Profession">
                         <h5>Profession : </h5> <p>Advanced Front-End Programming</p>
                     </div>
-                   
+
                     <div className="Location">
-                       <h5>Location :</h5> <p>Code Academy, Baku</p>
+                        <h5>Location :</h5> <p>Code Academy, Baku</p>
                     </div>
 
                     <div className="Duration">
-                       <h5>Duration :</h5> <p>(2024 May ~ August)</p>
+                        <h5>Duration :</h5> <p>(2024 May ~ 2024 August)</p>
                     </div>
-                    
+
                 </div>
             </div>
-               
 
 
-               {/* ?????????????????????????????? */}
+
+            {/* ?????????????????????????????? */}
 
 
-               <div className="third__card">
+            <div className="third__card">
                 <div className="eduleft__side"><img loading='lazy' src="data:image/jpeg;base64,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" alt="" /></div>
                 <div className='eduright__side'>
                     <h3><strong>Code For Future </strong></h3>
@@ -61,18 +61,18 @@ const EducationSection = () => {
                     <div className="Profession">
                         <h5>Profession : </h5> <p>Full Stack Programming</p>
                     </div>
-                   
+
                     <div className="Location">
-                       <h5>Location :</h5> <p> Azərbaijan Technical University</p>
+                        <h5>Location :</h5> <p> Azərbaijan Technical University</p>
                     </div>
 
                     <div className="Duration">
-                       <h5>Duration :</h5> <p>(2024 May ~ August)</p>
+                        <h5>Duration :</h5> <p>(2023 September ~  2024 January)</p>
                     </div>
                     <div className='diploma'>
                         <h5>Honor Degree Diploma</h5>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
