@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import './contactsection1.scss';
 import logo from '../../assets/Allahverdi.png'
-const Contactsection1 = () => {
+const Contactsecontsection = () => {
     // Validation schema for form fields
     const validationSchema = Yup.object({
         name: Yup.string().required('Name is required'),
@@ -81,4 +81,4 @@ const Contactsection1 = () => {
             );
 };
 
-            export default Contactsection1;
+            export default Contactsecontsection;
