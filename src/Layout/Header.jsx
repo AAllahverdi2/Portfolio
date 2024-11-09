@@ -86,7 +86,8 @@ const Header = () => {
 
                         <Link to='/skills'>Skills</Link> <hr />
                         <Link to='/education'>Education</Link> <hr />
-                        <a href="#" onClick={() => handleLinkClick('/contact')}>Contact</a>
+                        <Link to='/contact'>Contact</Link> <hr />
+                        {/* <a href="#" onClick={() => handleLinkClick('/contact')}>Contact</a> */}
                     </div>
                 </div>
             </div>
