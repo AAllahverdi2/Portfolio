@@ -1,5 +1,6 @@
 import About from "../Pages/About";
 import Contact from "../Pages/Contact";
+import Experience from "../Pages/Experience";
 import Home from "../Pages/Home";
 import MainRoot from "../Pages/MainRoot";
 import Skills from "../Pages/Skills";
@@ -24,6 +25,10 @@ const Route=[
             {
                 path:"skills",
                 element:<Skills/>
+            },
+            {
+                path:"experience",
+                element:<Experience/>
             },
            
         ]

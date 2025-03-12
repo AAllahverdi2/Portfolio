@@ -1,0 +1,33 @@
+.experience__header{
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 23px;
+
+}
+
+.card__container{
+    // border: 1px solid red;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.card_inner{
+    // border: 3px solid red;
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    background-color: #242471;
+    padding: 20px !important;
+}
+.exp__title{
+    color: #fff;
+    
+}
