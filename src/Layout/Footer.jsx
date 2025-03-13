@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.scss';
 import { Link } from 'react-router-dom';
+import myLogo from '../assets/myLogo.png'
 
 const Footer = () => {
   return (
@@ -42,7 +43,7 @@ const Footer = () => {
         <div className="container_fixedicon">
           <div className="centerCircle_fixedicon">
             <img className="Jcip_fixedicon"
-              src="https://files.oaiusercontent.com/file-LpgALXorE5LHxkmZohhHCo?se=2025-03-13T15%3A32%3A22Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D09a72486-8a61-44cc-b49a-b32579a8a61b.webp&sig=DBOmz7oMZCW1%2BA5IWunDDWAtwfBXla2A87GZ51xViRg%3D"
+              src={myLogo}
               alt="Main Icon" width="40" />
 
             <a href="https://www.facebook.com/allahverdi.agamaliyev.3" className="littleCircle_fixedicon facebook_fixedicon">

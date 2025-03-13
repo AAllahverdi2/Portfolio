@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Offcanvas } from 'bootstrap';
 import './Header.scss';
-
+import myLogo from '../assets/myLogo.png'
 const Header = () => {
     const [isActive, setIsActive] = useState(false);
     const navigate = useNavigate();
@@ -34,7 +34,7 @@ const Header = () => {
 
     return (
         <div className="header">
-            <h1 className="title"> <img style={{maxWidth:"50px", maxHeight:"50px", borderRadius:"50%", marginRight:"10px",objectFit:"cover",border:"1px solid white" }} src="https://files.oaiusercontent.com/file-LpgALXorE5LHxkmZohhHCo?se=2025-03-13T15%3A32%3A22Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D09a72486-8a61-44cc-b49a-b32579a8a61b.webp&sig=DBOmz7oMZCW1%2BA5IWunDDWAtwfBXla2A87GZ51xViRg%3D" alt="" />A.Allahverdi</h1>
+            <h1 className="title"> <img style={{maxWidth:"50px", maxHeight:"50px", borderRadius:"50%", marginRight:"10px",objectFit:"cover",border:"1px solid white" }} src={myLogo} alt="" />A.Allahverdi</h1>
             <nav className="nav">
                 <Link
                     to="/"
@@ -97,11 +97,13 @@ const Header = () => {
 
                     </div>
                     <div className="offcanvas-body offlinks">
-                        <a href="#" onClick={() => handleLinkClick('/')}>Home</a><hr />
+                        <a href="/" onClick={() => handleLinkClick('/')}>Home</a><hr />
                         {/* <a href="#" onClick={() => handleLinkClick('/skills')}>About</a><hr /> */}
 
                         <Link to='/skills'>Skills</Link> <hr />
                         <Link to='/education'>Education</Link> <hr />
+                        <Link to='/experience'>Experience</Link> <hr />
+                        <Link to='/portfolio'>Portfolio</Link> <hr />
                         <Link to='/contact'>Contact</Link> <hr />
                         {/* <a href="#" onClick={() => handleLinkClick('/contact')}>Contact</a> */}
                     </div>

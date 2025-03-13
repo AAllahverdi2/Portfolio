@@ -68,7 +68,7 @@
         gap: 25px;
     }
 
-    .footer-link, 
+    .footer-link,
     .footer-link1 {
         font-size: 14px;
     }
@@ -193,7 +193,8 @@
 
 .instagram_fixedicon {
     background: #E1306C;
-    img{
+
+    img {
         color: white !important;
         background-color: white !important;
     }
@@ -228,6 +229,7 @@
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -237,7 +239,65 @@
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(-360deg);
+    }
+}
+
+
+@media (max-width: 750px) {
+    .fixed-icons_fixedicon {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .container_fixedicon {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .centerCircle_fixedicon {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .littleCircle_fixedicon {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .littleCircle_fixedicon svg {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+
+    /* İkonların dönüş mesafesini de küçültüyoruz */
+    .littleCircle_fixedicon:nth-child(2) {
+        transform: rotate(0deg) translateY(-4rem) rotate(0deg);
+    }
+
+    .littleCircle_fixedicon:nth-child(3) {
+        transform: rotate(60deg) translateY(-4rem) rotate(-60deg);
+    }
+
+    .littleCircle_fixedicon:nth-child(4) {
+        transform: rotate(120deg) translateY(-4rem) rotate(-120deg);
+    }
+
+    .littleCircle_fixedicon:nth-child(5) {
+        transform: rotate(180deg) translateY(-4rem) rotate(-180deg);
+    }
+
+    .littleCircle_fixedicon:nth-child(6) {
+        transform: rotate(240deg) translateY(-4rem) rotate(-240deg);
+    }
+
+    .littleCircle_fixedicon:nth-child(7) {
+        transform: rotate(300deg) translateY(-4rem) rotate(-300deg);
     }
 }
