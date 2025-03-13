@@ -14,11 +14,10 @@ const ContactSection = () => {
         message: Yup.string().required('Message is required'),
     });
 
-    // Form başlangıç değerleri
     const initialValues = {
         name: '',
         email: '',
-        
+
         message: '',
     };
 
