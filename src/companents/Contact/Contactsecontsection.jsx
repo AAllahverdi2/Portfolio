@@ -1,6 +1,6 @@
 import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import axios from 'axios';
 import './contactsection1.scss';
 import logo from '../../assets/Allahverdi.png';
@@ -15,6 +15,7 @@ const ContactSection = () => {
     });
 
     const initialValues = {
+        
         name: '',
         email: '',
 
