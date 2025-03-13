@@ -4,7 +4,6 @@ import technestlogo from '../../assets/technest.jpeg';
 import aztulogo from '../../assets/aztu.png';
 import cfflogo from '../../assets/cff.jpeg';
 import { LanguageContext } from '../../context/LanguageContext';
-// import { LanguageContext } from '../../contexts/LanguageContext'; // LanguageContext'i import et
 
 const EducationSection = () => {
     const { language } = useContext(LanguageContext); // Seçilen dili al
