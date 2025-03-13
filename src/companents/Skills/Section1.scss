@@ -26,7 +26,6 @@
         animation: slideIn 0.8s ease forwards; // Animasiya tətbiqi
 
         &:hover {
-            // transform: rotate(45deg) scale(1.05);
             box-shadow: rgba(235, 232, 232, 0.25) 0px 54px 55px, rgba(255, 254, 254, 0.12) 0px -12px 30px, rgba(249, 249, 249, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px !important;
         }
 
@@ -79,7 +78,6 @@
     box-shadow: rgba(235, 232, 232, 0.25) 0px 54px 55px, rgba(255, 254, 254, 0.12) 0px -12px 30px, rgba(249, 249, 249, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px !important;
 }
 
-// Kartların sağdan sola doğru gəlməsini təmin edən animasiya
 @keyframes slideIn {
     0% {
         opacity: 0;

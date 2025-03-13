@@ -1,33 +1,75 @@
-.experience__header{
+.experience__header {
     color: white;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    font-size: 23px;
-
-}
-
-.card__container{
-    // border: 1px solid red;
+    font-size: 26px;
+    font-weight: bold;
+  }
+  
+  .card__container {
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
-}
-
-.card_inner{
-    // border: 3px solid red;
+    gap: 20px;
+  }
+  
+  .card_inner {
     width: 90%;
     height: auto;
     border-radius: 10px;
     background-color: #242471;
-    padding: 20px !important;
-}
-.exp__title{
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+  
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+  
+  .exp__header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .exp__logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+  
+  .exp__info {
+    h3 {
+      font-size: 18px;
+      color: #fff;
+    }
+  
+    h4 {
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffcc00;
+    }
+  
+    .exp__date {
+      font-size: 14px;
+      color: #bbb;
+    }
+  }
+  
+  .exp__details {
     color: #fff;
-    
-}
+    font-size: 14px;
+    padding-left: 20px;
+    li {
+      margin-bottom: 5px;
+    }
+  }
+  

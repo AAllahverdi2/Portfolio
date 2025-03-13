@@ -9,10 +9,10 @@ const Section1 = () => {
 
     useEffect(() => {
         AOS.init({
-            duration: 1200, // Hər kartın animasiya müddəti
-            easing: 'ease-out', // Animasiya hərəkəti
-            once: true, // Hər element yalnız bir dəfə animasiya olsun
-            offset: 100, // Ekrana gəldikdə animasiyanın başlaması üçün offset
+            duration: 1200, 
+            easing: 'ease-out', 
+            once: true, 
+            offset: 100, 
         });
     }, []);
 
@@ -27,21 +27,25 @@ const Section1 = () => {
     if (error) return <div>Xəta baş verdi: {error.message}</div>;
 
     return (
-        <div className="skills-container">
-            {data && data.map((skill, index) => (
-                <div
-                    className="skill-card"
-                    key={skill.id}
-                    data-aos="fade-up"
-                    data-aos-delay={`${index * 150}`} // Hər kart üçün gecikmə 150ms artırılır
-                >
-                    <div className="skill-image-wrapper">
-                        <img src={skill.image} alt={skill.name} className="skill-image" />
+        <div>
+            <h2 className='text-center' style={{color:"white", padding:"20px", fontWeight:"bold"}}>Skills</h2>
+            <div className="skills-container">
+
+                {data && data.map((skill, index) => (
+                    <div
+                        className="skill-card"
+                        key={skill.id}
+                        data-aos="fade-up"
+                        data-aos-delay={`${index * 150}`} // Hər kart üçün gecikmə 150ms artırılır
+                    >
+                        <div className="skill-image-wrapper">
+                            <img src={skill.image} alt={skill.name} className="skill-image" />
+                        </div>
+                        <h3 className="skill-name">{skill.name}</h3>
+                        <p className="skill-desc">{skill.desc}</p>
                     </div>
-                    <h3 className="skill-name">{skill.name}</h3>
-                    <p className="skill-desc">{skill.desc}</p>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
     );
 }

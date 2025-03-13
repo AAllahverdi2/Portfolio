@@ -3,6 +3,7 @@ import Contact from "../Pages/Contact";
 import Experience from "../Pages/Experience";
 import Home from "../Pages/Home";
 import MainRoot from "../Pages/MainRoot";
+import Portfolio from "../Pages/Portfolio";
 import Skills from "../Pages/Skills";
 
 const Route=[
@@ -29,6 +30,10 @@ const Route=[
             {
                 path:"experience",
                 element:<Experience/>
+            },
+            {
+                path:"portfolio",
+                element:<Portfolio/>
             },
            
         ]

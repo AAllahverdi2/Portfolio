@@ -34,7 +34,7 @@ const Header = () => {
 
     return (
         <div className="header">
-            <h1 className="title">Allahverdi</h1>
+            <h1 className="title"> <img style={{maxWidth:"50px", maxHeight:"50px", borderRadius:"50%", marginRight:"10px",objectFit:"cover",border:"1px solid white" }} src="https://files.oaiusercontent.com/file-LpgALXorE5LHxkmZohhHCo?se=2025-03-13T15%3A32%3A22Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D09a72486-8a61-44cc-b49a-b32579a8a61b.webp&sig=DBOmz7oMZCW1%2BA5IWunDDWAtwfBXla2A87GZ51xViRg%3D" alt="" />A.Allahverdi</h1>
             <nav className="nav">
                 <Link
                     to="/"
@@ -42,17 +42,33 @@ const Header = () => {
                 >
                     Home
                 </Link>
+
+                <Link
+                    to="/education"
+                    className={`nav-link ${isActiveLink('/about') ? 'active-link' : ''}`}
+                >
+                    Education
+                </Link>
                 <Link
                     to="/skills"
                     className={`nav-link ${isActiveLink('/skills') ? 'active-link' : ''}`}
                 >
                     Skills
                 </Link>
+
                 <Link
-                    to="/education"
-                    className={`nav-link ${isActiveLink('/about') ? 'active-link' : ''}`}
+                    to="/experience"
+                    className={`nav-link ${isActiveLink('/experience') ? 'active-link' : ''}`}
                 >
-                    Education
+                    Experience
+                </Link>
+
+
+                <Link
+                    to="/portfolio"
+                    className={`nav-link ${isActiveLink('/portfolio') ? 'active-link' : ''}`}
+                >
+                    Portfolio
                 </Link>
                 <Link
                     to="/contact"

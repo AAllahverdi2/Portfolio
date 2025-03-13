@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import axios from 'axios';
 import './contactsection1.scss';
 import logo from '../../assets/Allahverdi.png';
+import toast, { Toaster } from 'react-hot-toast';
 
 const ContactSection = () => {
     const validationSchema = Yup.object({
@@ -24,18 +25,21 @@ const ContactSection = () => {
                 'https://portfolio-backend-api-indol.vercel.app/portfolio/contact/send-message',
                 values
             );
-            alert(response.data.message);
+            toast.success(response.data.message);
             resetForm();
         } catch (error) {
             console.error("Error sending message:", error);
-            alert("Failed to send message. Please try again.");
+            toast.error("Failed to send message. Please try again.");
             
         }
     };
 
 
     return (
-        <div className="contact-section">
+    <>
+     <h2 className="experience__header text-center">Contact</h2>
+        <div className="contact-section container">
+            
             <div className="contact-info">
                 <img src={logo} alt="Your Image" className="profile-image" />
                 <p><strong>Agamaliyev Allahverdi</strong></p>
@@ -81,7 +85,9 @@ const ContactSection = () => {
                     </Form>
                 </Formik>
             </div>
+            <Toaster/>
         </div>
+    </>
     );
 };
 

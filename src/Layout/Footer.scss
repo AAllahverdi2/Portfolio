@@ -1,110 +1,243 @@
 .footer__all {
-    background-color: #101046;
+    background: linear-gradient(135deg, #0d0d3b, #101046);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+    padding: 40px 20px;
+    gap: 30px;
+    box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .links__footer {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 30px;
-    width: 90%;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .footer__links {
     display: flex;
-    // flex-direction: column;
-    align-items: start;
+    flex-direction: column;
+    // align-items: center;
+}
 
-    .footer-link,
-    .footer-link1 {
-        position: relative;
-        color: #ffffff;
-        text-decoration: none;
-        padding: 8px 0;
-        font-size: 16px;
-        font-weight: 500;
-        overflow: hidden; // daşmanın qarşısını alır
-        transition: all 0.4s ease-in-out;
-        letter-spacing: 0.5px; // hərflər arasında məsafə
-        
-        // Hover effekti üçün ox
-        &::before {
-            content: '>>';
-            position: absolute;
-            left: -30px;
-            opacity: 0;
-            color: #00bcd4;
-            font-size: 16px;
-            font-weight: 600;
-            transition: all 0.4s ease-in-out;
-        }
+.footer-link,
+.footer-link1 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    padding: 10px;
+    border-radius: 8px;
+    position: relative;
 
-        // Hover effekti
-        &:hover {
-            color: #00bcd4; // rəng dəyişir
-            padding-left: 25px; // sağa animasiya
-            background: linear-gradient(90deg, transparent, rgba(0, 188, 212, 0.2)); // zərif fon animasiyası
-            border-radius: 4px; // yumşaq künclər
+    img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        transition: transform 0.3s ease-in-out;
+    }
 
-            &::before {
-                left: 0; // oxun sol tərəfdən çıxması
-                opacity: 1; // oxun görünməsi
-            }
+    &:hover {
+        color: #00bcd4;
+        transform: translateY(-3px);
+
+        img {
+            transform: scale(1.1);
         }
     }
 }
 
 .free {
-    width: 90%;
-    height: 1px;
-    border: 1px solid gray;
-    border-radius: 5px;
+    width: 80%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
 }
 
-
-@media only screen and (max-width: 550px) {
-    .footer__links {
-        a {
-            font-size: 10px !important;
-        }
-    }
-
-    .footer-link1 {
-        font-size: 10px !important;
-    }
-
-}
-
-.footer-link1 , .footer-link{
-    img{
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        margin: 10px;
-    }
-}
-
-
-@media only screen and (max-width: 550px) {
-    .footer-link1 , .footer-link{
-        img{
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            margin: 2px;
-        }
-    }
-
-}
-
-@media only screen and (max-width: 980px) {
-    .footer__links {
-        display: flex;
+@media only screen and (max-width: 768px) {
+    .links__footer {
         flex-direction: column;
-        align-items: start;
-    }    
+        align-items: center;
+        gap: 25px;
+    }
+
+    .footer-link, 
+    .footer-link1 {
+        font-size: 14px;
+    }
+
+    img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ficed 
+
+
+
+.fixed-icons_fixedicon {
+    align-items: center;
+    bottom: 3rem;
+    display: flex;
+    height: 4.5rem;
+    justify-content: center;
+    position: fixed;
+    right: 3rem;
+    width: 4.5rem;
+    z-index: 60;
+}
+
+.container_fixedicon {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 10rem;
+    height: 10rem;
+    padding-right: 30px !important;
+}
+
+.centerCircle_fixedicon {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation: spin_fixedicon 13s linear infinite;
+    transform-origin: center center;
+}
+
+.centerCircle_fixedicon .Jcip_fixedicon {
+    border-radius: 50% !important;
+    animation: spinReverse_fixedicon 13s linear infinite;
+    transform-origin: center center;
+}
+
+.littleCircle_fixedicon svg,
+.littleCircle_fixedicon i {
+    animation: spinReverse_fixedicon 13s linear infinite;
+    transform-origin: center center;
+}
+
+.littleCircle_fixedicon {
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    transition: transform 0.3s ease-in-out;
+}
+
+.littleCircle_fixedicon:nth-child(2) {
+    transform: rotate(0deg) translateY(-5rem) rotate(0deg);
+}
+
+.littleCircle_fixedicon:nth-child(3) {
+    transform: rotate(60deg) translateY(-5rem) rotate(-60deg);
+}
+
+.littleCircle_fixedicon:nth-child(4) {
+    transform: rotate(120deg) translateY(-5rem) rotate(-120deg);
+}
+
+.littleCircle_fixedicon:nth-child(5) {
+    transform: rotate(180deg) translateY(-5rem) rotate(-180deg);
+}
+
+.littleCircle_fixedicon:nth-child(6) {
+    transform: rotate(240deg) translateY(-5rem) rotate(-240deg);
+}
+
+.littleCircle_fixedicon:nth-child(7) {
+    transform: rotate(300deg) translateY(-5rem) rotate(-300deg);
+}
+
+/* Sosyal medya renkleri */
+.facebook_fixedicon {
+    background: #1877F2;
+}
+
+.twitter_fixedicon {
+    background: #1DA1F2;
+}
+
+.instagram_fixedicon {
+    background: #E1306C;
+    img{
+        color: white !important;
+        background-color: white !important;
+    }
+}
+
+.linkedin_fixedicon {
+    background: #0077B5;
+    color: white !important;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.youtube_fixedicon {
+    background: #FF0000;
+}
+
+.whatsapp_fixedicon {
+    background: #25D366;
+    color: white !important;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.littleCircle_fixedicon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: white;
+}
+
+/* Animasyonlar */
+@keyframes spin_fixedicon {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinReverse_fixedicon {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
 }

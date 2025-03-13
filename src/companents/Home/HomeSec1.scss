@@ -41,6 +41,7 @@
 
 .leftside {
   max-width: 600px;
+  
 }
 
 .leftside__content {
@@ -101,22 +102,55 @@
   width: 350px; 
   height: 350px; 
   border-radius: 50%;
-  overflow: hidden; 
+  overflow: hidden;
   position: relative; 
-  background: linear-gradient(135deg, #1e3c72, #2a5298); 
-  padding: 5px; 
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4), 
-              0 0 50px rgba(0, 0, 0, 0.2), 
-              inset 0 0 10px rgba(255, 255, 255, 0.1); 
+  background: transparent; 
+}
+
+/* 🌟 Dönen border */
+.rotating-border {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 0 30px rgba(227, 10, 10, 0.4), 
+              0 0 50px rgba(224, 13, 13, 0.2), 
+              inset 0 0 10px rgba(232, 10, 10, 0.1);
+  z-index: -1;
+
+  /* 🌀 Box-shadow ve border dönecek */
+  animation: rotateBorder 2s linear infinite;
+}
+
+/* Profil fotoğrafı, ama dış div dönüyor, bu sabit kalıyor */
+.profile-container {
+  width: 95%;
+  height: 95%;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-photo {
   width: 100%;
-  height: 100%;
-  border-radius: 50%; 
-  object-fit: cover; 
-  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5); 
+  height: auto;
+  border-radius: 50%;
+  position: relative; /* Sabit kalacak */
 }
+
+/* 🌀 Box-shadow ve border için dönme animasyonu */
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 
 @media only screen and (max-width: 1000px) {
   .all__sec1 {
