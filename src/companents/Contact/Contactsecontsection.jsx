@@ -95,7 +95,6 @@ const ContactSection = () => {
                 </div>
             </div>
 
-            {/* React Hot Toast Notification */}
             <Toaster position="top-center" reverseOrder={false} />
         </>
     );
