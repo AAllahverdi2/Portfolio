@@ -1,31 +1,60 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { LanguageContext } from '../../context/LanguageContext'; // Dil kontekstini daxil edirik
 import profilePhoto from '../../assets/Image.png';
 import './HomeSec1.scss';
 
 const HomeSection1 = () => {
+  const { language } = useContext(LanguageContext); // Seçilmiş dili götürürük
+
+  // Tərcümələr
+  const translations = {
+    az: {
+      greeting: "Salam, Mən",
+      jobTitle: "Dayanmadan inkişaf edən Web Developerəm",
+      description: "Mən inanıram ki, hər bir çətinlik yeni bir fürsətdir. \n Mən yalnız kod yazmıram, təcrübələr yaradıram, problemləri həll edirəm və ideyaları gerçəkləşdirirəm. \n Mən sərhədləri aşır, yeni texnologiyaları öyrənir və daha yaxşıya can atıram. \n Rəqəmsal dünya inkişaf edir, mən də onunla birlikdə inkişaf edirəm. Gəlin birlikdə qeyri-adi bir şey yaradaq! 🚀",
+      downloadCV: "CV Yüklə",
+    },
+    ru: {
+      greeting: "Привет, Я",
+      jobTitle: "Веб-разработчик, который всегда развивается",
+      description: "Я верю, что каждое испытание — это новая возможность. \n Я не просто пишу код, я создаю опыт, решаю проблемы и воплощаю идеи в жизнь. \n Я раздвигаю границы, осваиваю новые технологии и никогда не останавливаюсь на достигнутом. \n Цифровой мир развивается, и я развиваюсь вместе с ним. Давайте создадим что-то необыкновенное вместе! 🚀",
+      downloadCV: "Скачать CV",
+    },
+    en: {
+      greeting: "Hi, I'm",
+      jobTitle: "A Web Developer Who Keeps Growing",
+      description: "I believe that every challenge is an opportunity. \n I don’t just write code, I build experiences, solve problems, and bring ideas to life. \n I push boundaries, embrace new technologies, and never settle for good enough. \n The digital world is evolving, and so am I. Let’s create something extraordinary together! 🚀",
+      downloadCV: "Download CV",
+    },
+  };
+
   return (
     <div className='section1__all'>
       <div className="container all__sec1">
         <div className="leftside">
           <div className="leftside__content">
-            <h1 className="intro-title">Hi, I'm <span className="highlight">Allahverdi</span></h1>
-            <h2 className="intro-subtitle">A Web Developer Who  <span className="highlight">Keeps Growing</span></h2>
+            <h1 className="intro-title">
+              {translations[language].greeting} <span className="highlight">Allahverdi</span>
+            </h1>
+            <h2 className="intro-subtitle">
+              {translations[language].jobTitle}
+            </h2>
             <p className="description">
-              <strong>    I believe that every challenge is an opportunity.  </strong> <br />
-              I don’t just write code I build experiences, <span className="highlight">solve problems</span>, and bring ideas to life.
-              I push boundaries, embrace new technologies, and never settle for <span className="highlight">good enough.</span>
-              <br /><br />
-              The <span className="highlight">digital world</span> is evolving, and so am I. Let’s create something extraordinary together! 🚀
-
+              {translations[language].description.split("\n").map((line, index) => (
+                <React.Fragment key={index}>
+                  {line}
+                  <br />
+                </React.Fragment>
+              ))}
             </p>
             <div className="buttons">
               <button className="btn resume-btn">
                 <a
-                  href="https://drive.google.com/uc?export=download&id=1NUx-d1IZPnZNknB_bn0NfivlDJG-2jji"
+                  href="https://drive.google.com/uc?export=download&id=12giQWLiJKsnGsEJQkBdZhZ49Cfar9nw5"
                   download
                   style={{ fontSize: '18px', textDecoration: 'underline', color: 'white', fontWeight: "bold" }}
                 >
-                  Download CV
+                  {translations[language].downloadCV}
                 </a>
               </button>
             </div>
@@ -33,23 +62,11 @@ const HomeSection1 = () => {
         </div>
         <div>
           <div className="right__side">
-            {/* Dönen border için ayrı bir div */}
             <div className="rotating-border"></div>
-
-            {/* Sabit kalacak profil resmi */}
             <div className="profile-container">
               <img src={profilePhoto} alt="Allahverdi" className="profile-photo" />
             </div>
           </div>
-
-
-          {/* <div className="socialmedias">
-            <div className='smedia'><a href="https://www.linkedin.com/in/allahverdi-agamaliyev/"><i className="fa-brands fa-linkedin-in"></i></a></div>
-            <div className='smedia'><a href="https://www.instagram.com/agamaliyevh_/"><i className="fa-brands fa-instagram"></i></a></div>
-            <div className='smedia'><a href="https://github.com/AAllahverdi2"><i className="fa-brands fa-github"></i></a></div>
-            <div className='smedia'><a href="https://mail.google.com/mail/u/0/#inbox"><i className="fa-regular fa-envelope-open"></i></a></div>
-            <div className='smedia'><a href="https://www.facebook.com/allahverdi.agamaliyev.3"><i className="fa-brands fa-facebook-f"></i></a></div>
-          </div> */}
         </div>
       </div>
     </div>

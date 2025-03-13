@@ -1,69 +1,123 @@
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  /* Dəyişdirildi */
   align-items: center;
-  padding: 20px;
-  gap: 200px;
-  width: 100% !important;
-  background: #101046; 
-  box-shadow: rgba(234, 232, 232, 0.35) 0px 5px 15px; 
+  padding: 10px 20px;
+  background: #101046;
+  box-shadow: rgba(234, 232, 232, 0.35) 0px 5px 15px;
+  flex-wrap: wrap;
+  /* Kiçik ekranlarda səliqəli görünməsi üçün */
 }
 
 .title {
-  font-size: 36px;
+  font-size: 30px;
+  /* Kiçildildi */
   font-weight: bold;
-  color: #fff; 
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   padding: 5px 10px;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.title img {
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+  border: 1px solid white;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  /* Boşluq əlavə olundu */
+  flex-wrap: wrap;
+  /* Dar ekranlar üçün düzgün yerləşdirmək */
 }
 
 .nav a {
-  margin: 0 10px;
   color: #fff;
   text-decoration: none;
-  font-size: 23px;
-  font-family:Poppins, sans-serif !important;
+  font-size: 20px;
+  /* Azaldıldı */
+  font-family: Poppins, sans-serif !important;
 }
 
 .nav-link {
   position: relative;
-  padding: 5px 10px;
+  padding: 8px 12px;
+  /* Kiçik ekranlar üçün nisbətən azaldıldı */
+  white-space: nowrap;
+  /* Mətni bir sətirdə saxlamaq üçün */
 }
 
 .nav-link.active-link {
-  color: blue; /* Aktiv link qırmızı olacaq */
-  border-bottom: 2px solid blue; /* Alt xətt */
+  color: blue;
+  border-bottom: 2px solid blue;
 }
 
 .nav a:hover {
-  color: blue; 
+  color: blue;
 }
 
+/* Dil seçimi üçün düzəlişlər */
+.language-selector {
+  margin-left: auto;
+  /* Dil seçim düyməsini sağ tərəfə yerləşdirmək üçün */
+}
+
+.language select {
+  background: #101046;
+  color: white;
+  border: 1px solid white;
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Kiçik ekranlar üçün düzəlişlər */
 @media only screen and (max-width: 900px) {
   .header {
-      display: flex;
-      gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
   }
-}
 
-@media only screen and (max-width: 800px) {
-  .title {
-      font-size: 20px;
+  .nav {
+    width: 100%;
+    justify-content: center;
   }
+
   .nav a {
-      font-size: 18px;
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .language {
+    margin-top: 10px;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .nav {
-      display: none;
+    display: none;
   }
+
   .offcanvasasa {
-      display: block !important;
+    display: block !important;
   }
 }
+
 
 .offcanvasasa {
   color: white !important;

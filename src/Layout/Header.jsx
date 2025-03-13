@@ -1,13 +1,45 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Offcanvas } from 'bootstrap';
 import './Header.scss';
-// import myLogo from '../assets/myLogo.png'
-import myLogo from '../../src/assets/mylogo.png'
+import myLogo from '../../src/assets/mylogo.png';
+import { LanguageContext } from '../context/LanguageContext';
+
 const Header = () => {
+    const { language, setLanguage } = useContext(LanguageContext); 
     const [isActive, setIsActive] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
+
+    const translations = {
+        az: {
+            home: "Ana Səhifə",
+            education: "Təhsil",
+            skills: "Bacarıqlar",
+            experience: "Təcrübə",
+            portfolio: "Portfolio",
+            contact: "Əlaqə",
+            langSelect: "Dil Seçimi",
+        },
+        ru: {
+            home: "Главная",
+            education: "Образование",
+            skills: "Навыки",
+            experience: "Опыт",
+            portfolio: "Портфолио",
+            contact: "Контакты",
+            langSelect: "Выбор языка",
+        },
+        en: {
+            home: "Home",
+            education: "Education",
+            skills: "Skills",
+            experience: "Experience",
+            portfolio: "Portfolio",
+            contact: "Contact",
+            langSelect: "Language",
+        },
+    };
 
     const handleLinkClick = (path) => {
         closeOffcanvas();
@@ -26,6 +58,7 @@ const Header = () => {
         }
     };
 
+
     useEffect(() => {
         setIsActive(false);
         closeOffcanvas();
@@ -35,50 +68,42 @@ const Header = () => {
 
     return (
         <div className="header">
-            <h1 className="title"> <img style={{maxWidth:"50px", maxHeight:"50px", borderRadius:"50%", marginRight:"10px",objectFit:"cover",border:"1px solid white" }} src={myLogo} alt="" />A.Allahverdi</h1>
+            <h1 className="title">
+                <img
+                    style={{ maxWidth: "50px", maxHeight: "50px", borderRadius: "50%", marginRight: "10px", objectFit: "cover", border: "1px solid white" }}
+                    src={myLogo}
+                    alt="Logo"
+                />
+                A.Allahverdi
+            </h1>
+
             <nav className="nav">
-                <Link
-                    to="/"
-                    className={`nav-link ${isActiveLink('/') ? 'active-link' : ''}`}
-                >
-                    Home
+                <Link to="/" className={`nav-link ${isActiveLink('/') ? 'active-link' : ''}`}>
+                    {translations[language].home}
                 </Link>
-
-                <Link
-                    to="/education"
-                    className={`nav-link ${isActiveLink('/about') ? 'active-link' : ''}`}
-                >
-                    Education
+                <Link to="/education" className={`nav-link ${isActiveLink('/education') ? 'active-link' : ''}`}>
+                    {translations[language].education}
                 </Link>
-                <Link
-                    to="/skills"
-                    className={`nav-link ${isActiveLink('/skills') ? 'active-link' : ''}`}
-                >
-                    Skills
+                <Link to="/skills" className={`nav-link ${isActiveLink('/skills') ? 'active-link' : ''}`}>
+                    {translations[language].skills}
                 </Link>
-
-                <Link
-                    to="/experience"
-                    className={`nav-link ${isActiveLink('/experience') ? 'active-link' : ''}`}
-                >
-                    Experience
+                <Link to="/experience" className={`nav-link ${isActiveLink('/experience') ? 'active-link' : ''}`}>
+                    {translations[language].experience}
                 </Link>
-
-
-                <Link
-                    to="/portfolio"
-                    className={`nav-link ${isActiveLink('/portfolio') ? 'active-link' : ''}`}
-                >
-                    Portfolio
+                <Link to="/portfolio" className={`nav-link ${isActiveLink('/portfolio') ? 'active-link' : ''}`}>
+                    {translations[language].portfolio}
                 </Link>
-                <Link
-                    to="/contact"
-                    className={`nav-link ${isActiveLink('/contact') ? 'active-link' : ''}`}
-                >
-                    Contact
+                <Link to="/contact" className={`nav-link ${isActiveLink('/contact') ? 'active-link' : ''}`}>
+                    {translations[language].contact}
                 </Link>
-
             </nav>
+
+            <select value={language} onChange={(e) => setLanguage(e.target.value)} className="language-select">
+                <option value="az"> AZ</option>
+                <option value="ru"> RU</option>
+                <option value="en"> EN</option>
+            </select>
+
             <div className="offcanvasasa">
                 <button
                     className={`btn btn-primary offbtn ${isActive ? 'active' : ''}`}
@@ -94,19 +119,14 @@ const Header = () => {
                 </button>
 
                 <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                    <div className="offcanvas-header">
-
-                    </div>
+                    <div className="offcanvas-header"></div>
                     <div className="offcanvas-body offlinks">
-                        <a href="/" onClick={() => handleLinkClick('/')}>Home</a><hr />
-                        {/* <a href="#" onClick={() => handleLinkClick('/skills')}>About</a><hr /> */}
-
-                        <Link to='/skills'>Skills</Link> <hr />
-                        <Link to='/education'>Education</Link> <hr />
-                        <Link to='/experience'>Experience</Link> <hr />
-                        <Link to='/portfolio'>Portfolio</Link> <hr />
-                        <Link to='/contact'>Contact</Link> <hr />
-                        {/* <a href="#" onClick={() => handleLinkClick('/contact')}>Contact</a> */}
+                        <Link to='/' onClick={() => handleLinkClick('/')}>{translations[language].home}</Link> <hr />
+                        <Link to='/skills'>{translations[language].skills}</Link> <hr />
+                        <Link to='/education'>{translations[language].education}</Link> <hr />
+                        <Link to='/experience'>{translations[language].experience}</Link> <hr />
+                        <Link to='/portfolio'>{translations[language].portfolio}</Link> <hr />
+                        <Link to='/contact'>{translations[language].contact}</Link> <hr />
                     </div>
                 </div>
             </div>
