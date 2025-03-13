@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Offcanvas } from 'bootstrap';
 import './Header.scss';
-import myLogo from '../assets/myLogo.png'
+// import myLogo from '../assets/myLogo.png'
+import myLogo from '../../src/assets/mylogo.png'
 const Header = () => {
     const [isActive, setIsActive] = useState(false);
     const navigate = useNavigate();
