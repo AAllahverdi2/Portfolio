@@ -15,7 +15,7 @@ const ContactSection = () => {
     });
 
     const initialValues = {
-        
+
         name: '',
         email: '',
 

@@ -5,12 +5,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ['yup'],
-      output: {
-        globals: {
-          yup: 'Yup',
-        },
-      },
+      
     },
   },
 });
