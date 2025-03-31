@@ -84,7 +84,7 @@
 /* Kiçik ekranlar üçün düzəlişlər */
 @media only screen and (max-width: 900px) {
   .header {
-    flex-direction: column;
+    // flex-direction: column;
     align-items: center;
     padding: 15px;
   }
@@ -115,6 +115,13 @@
 
   .offcanvasasa {
     display: block !important;
+  }
+  .header{
+    display: flex !important;
+  border: 3px solid red;
+  }
+  .languages{
+    display: none;
   }
 }
 
@@ -182,4 +189,15 @@
 
 .offbtn.active .bar:nth-child(3) {
   transform: translateY(-13px) rotate(-45deg);
+}
+
+.languages , .languagess{
+  background-color: #101046 !important;
+  color: white;
+  width: 80px;
+  height: 30px;
+  border: 1px solid white;
+  border-radius: 10px;
+ 
+
 }

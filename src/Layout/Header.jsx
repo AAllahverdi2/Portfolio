@@ -6,7 +6,7 @@ import myLogo from '../../src/assets/mylogo.png';
 import { LanguageContext } from '../context/LanguageContext';
 
 const Header = () => {
-    const { language, setLanguage } = useContext(LanguageContext); 
+    const { language, setLanguage } = useContext(LanguageContext);
     const [isActive, setIsActive] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
@@ -96,13 +96,14 @@ const Header = () => {
                 <Link to="/contact" className={`nav-link ${isActiveLink('/contact') ? 'active-link' : ''}`}>
                     {translations[language].contact}
                 </Link>
-            </nav>
-
-            <select value={language} onChange={(e) => setLanguage(e.target.value)} className="language-select">
+                <select value={language} onChange={(e) => setLanguage(e.target.value)} className="language-select languages">
                 <option value="az"> AZ</option>
                 <option value="ru"> RU</option>
                 <option value="en"> EN</option>
             </select>
+            </nav>
+
+          
 
             <div className="offcanvasasa">
                 <button
@@ -127,6 +128,11 @@ const Header = () => {
                         <Link to='/experience'>{translations[language].experience}</Link> <hr />
                         <Link to='/portfolio'>{translations[language].portfolio}</Link> <hr />
                         <Link to='/contact'>{translations[language].contact}</Link> <hr />
+                        <select value={language} onChange={(e) => setLanguage(e.target.value)} className="language-select languagess">
+                            <option value="az"> AZ</option>
+                            <option value="ru"> RU</option>
+                            <option value="en"> EN</option>
+                        </select>
                     </div>
                 </div>
             </div>
