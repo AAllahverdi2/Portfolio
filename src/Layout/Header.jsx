@@ -81,6 +81,9 @@ const Header = () => {
                 <Link to="/" className={`nav-link ${isActiveLink('/') ? 'active-link' : ''}`}>
                     {translations[language].home}
                 </Link>
+                <Link to="/portfolio" className={`nav-link ${isActiveLink('/portfolio') ? 'active-link' : ''}`}>
+                    {translations[language].portfolio}
+                </Link>
                 <Link to="/education" className={`nav-link ${isActiveLink('/education') ? 'active-link' : ''}`}>
                     {translations[language].education}
                 </Link>
@@ -90,20 +93,18 @@ const Header = () => {
                 <Link to="/experience" className={`nav-link ${isActiveLink('/experience') ? 'active-link' : ''}`}>
                     {translations[language].experience}
                 </Link>
-                <Link to="/portfolio" className={`nav-link ${isActiveLink('/portfolio') ? 'active-link' : ''}`}>
-                    {translations[language].portfolio}
-                </Link>
+
                 <Link to="/contact" className={`nav-link ${isActiveLink('/contact') ? 'active-link' : ''}`}>
                     {translations[language].contact}
                 </Link>
                 <select value={language} onChange={(e) => setLanguage(e.target.value)} className="language-select languages">
-                <option value="az"> AZ</option>
-                <option value="ru"> RU</option>
-                <option value="en"> EN</option>
-            </select>
+                    <option value="az"> AZ</option>
+                    <option value="ru"> RU</option>
+                    <option value="en"> EN</option>
+                </select>
             </nav>
 
-          
+
 
             <div className="offcanvasasa">
                 <button
@@ -123,10 +124,10 @@ const Header = () => {
                     <div className="offcanvas-header"></div>
                     <div className="offcanvas-body offlinks">
                         <Link to='/' onClick={() => handleLinkClick('/')}>{translations[language].home}</Link> <hr />
+                        <Link to='/portfolio'>{translations[language].portfolio}</Link> <hr />
                         <Link to='/skills'>{translations[language].skills}</Link> <hr />
                         <Link to='/education'>{translations[language].education}</Link> <hr />
                         <Link to='/experience'>{translations[language].experience}</Link> <hr />
-                        <Link to='/portfolio'>{translations[language].portfolio}</Link> <hr />
                         <Link to='/contact'>{translations[language].contact}</Link> <hr />
                         <select value={language} onChange={(e) => setLanguage(e.target.value)} className="language-select languagess">
                             <option value="az"> AZ</option>

@@ -31,12 +31,9 @@ const ContactSection = () => {
                 values
             );
 
-            // Başarılı ise kullanıcıya başarı mesajı göster
             toast.success(response.data.message);
             resetForm(); // Formu sıfırla
         } catch (error) {
-            // Hata durumunda hata mesajını göster
-            console.error("Error sending message:", error.response || error); // Hata detayları
             toast.error("Failed to send message. Please try again.");
         }
     };

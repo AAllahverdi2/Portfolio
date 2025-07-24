@@ -50,7 +50,7 @@ const HomeSection1 = () => {
             <div className="buttons">
               <button className="btn resume-btn">
                 <a
-                  href="https://drive.google.com/uc?export=download&id=12giQWLiJKsnGsEJQkBdZhZ49Cfar9nw5"
+                  href="https://drive.google.com/file/d/1TsqGWBUdmzRl5GDbGnGcYR3yEmJSdh4x/view?usp=sharing"
                   download
                   style={{ fontSize: '18px', textDecoration: 'underline', color: 'white', fontWeight: "bold" }}
                 >
